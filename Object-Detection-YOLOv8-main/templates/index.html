@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Object Detection Realtime</title>
+    <style>
+      .parent {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.content {
+  flex-grow: 5;
+}
+  
+/* --------- Non-flexbox related styles --------- */
+.child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1%;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  color: #ffe8c3;
+}
+
+body {
+  background-color: #282c35;
+  font-family: Verdana;
+  font-weight: 600;
+}
+
+.child-1
+{
+ width: 100%;
+ height: 100%;
+ align-items: center;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"><div>
+          <h1>Live Cam-Feed</h1>
+         
+        </div></div>
+      <div class="main">
+        <div class="child"> <h3>Camera Views<br><br><center>
+          <form action="/button_view" method="post" target="_self">
+            <button name="button_name" type="submit" value="cam_v1">        <br>    view 1    <br>        <br></button><br>
+            <button name="button_name" type="submit" value="cam_v2">        <br>    view 2    <br>        <br></button><br>
+            <button name="button_name" type="submit" value="cam_v3">        <br>    view 3    <br>        <br></button><br>
+            <button name="button_name" type="submit" value="cam_v4">        <br>    view 4    <br>        <br></button>  <br>  </center>   
+          </form></div>
+        <div class="child-1"> <img src="{{ url_for('video_feed') }}" >
+    </div>  
+      </div>
+      <div class="child"><center><h2> Camera Controls<br><br>
+          <form action="/button_con" method="post" target="_self">
+            <button name="button_name" type="submit" value="con_rot">Rotation</button>
+            <button name="button_name" type="submit" value="con_fl">Flash Light</button>
+            <button name="button_name" type="submit" value="con_cam">Switch Camera</button>       
+        </form></center></div>
+        
+    </div>
+  </body>
+</html>
